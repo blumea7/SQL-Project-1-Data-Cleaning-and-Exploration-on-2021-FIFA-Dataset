@@ -16,9 +16,13 @@ Here's a preview of the raw dataset:
 __________________________________________________________________________________________________________________________________________________________
 
       1. Altered tables by making use of ADD and DROP functions
+      
       2. Updated values in columns using UPDATE function in combination with CASE WHEN logic 
+      
       3. Modified string values using functions such as CHARINDEX, CAST, SUBSTRING, REPLACE, RIGHT and LEFT.
+      
       4. Utilized WITH clause and Subqueries to perform complex queries
+      
       5. Utilized Aggregate and Window functions to perform data explorations
 
 
