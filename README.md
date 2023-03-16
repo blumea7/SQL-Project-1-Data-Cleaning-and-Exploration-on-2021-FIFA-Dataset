@@ -15,15 +15,15 @@ Here's a preview of the raw dataset:
 ### SQL Techniques & Skills used in this Project
 __________________________________________________________________________________________________________________________________________________________
 
-      1. Altered tables by making use of ADD and DROP functions
+    1. Altered tables by making use of ADD and DROP functions
       
-      2. Updated values in columns using UPDATE function in combination with CASE WHEN logic 
+    2. Updated values in columns using UPDATE function in combination with CASE WHEN logic 
       
-      3. Modified string values using functions such as CHARINDEX, CAST, SUBSTRING, REPLACE, RIGHT and LEFT.
+    3. Modified string values using functions such as CHARINDEX, CAST, SUBSTRING, REPLACE, RIGHT and LEFT.
       
-      4. Utilized WITH clause and Subqueries to perform complex queries
+    4. Utilized WITH clause and Subqueries to perform complex queries
       
-      5. Utilized Aggregate and Window functions to perform data explorations
+    5. Utilized Aggregate and Window functions to perform data explorations
 
 
 ### Data Cleaning
@@ -60,9 +60,6 @@ Here's a snippet of the cleaned data:
 ### Data Exploration
 __________________________________________________________________________________________________________________________________________________________
 
-
-
-
 1. Find the Top 10 players based on OVA
  
       | LongName                     | Club                    | Best_Position | OVA | Total_Stats | Wage_euro |
@@ -86,7 +83,7 @@ ________________________________________________________________________________
 
    Findings: 
    
-   - Generally, Forwards are paid highest, followed by midfielders and then defenders. 
+   - Generally, forwards are paid highest, followed by midfielders and then defenders. 
                 Goalkeepers are paid the least
    - The highest paid positions (forwards) have the least number of players across the league
     
@@ -108,7 +105,7 @@ ________________________________________________________________________________
       | GK            | Goalkeeper     | 9228          | 1434         |
       | RM            | Midfielders    | 8976          | 1259         |
 
-5. Determine the distribution of wage across differeny age groups in each position
+5. Determine the distribution of wage across different age groups in each position
 
 
       | Best_Position | Age_Group | Mean_Wage_Per_Age_Group |
@@ -191,3 +188,8 @@ ________________________________________________________________________________
       | ST            | 30 - 35   | 17816                   |
       | ST            | 35 - 40   | 10571                   |
       | ST            | 40 - 45   | 3500                    |
+
+
+### Data Visualization
+__________________________________________________________________________________________________________________________________________________________
+To follow...
