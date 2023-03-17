@@ -136,7 +136,7 @@ ________________________________________________________________________________
     | Midfielders    | 35 - 40   | 7617                    |
     | Midfielders    | 40 - 45   | 2333                    |
 
-### Data Visualization
+### Data Analysis and Visualization
 __________________________________________________________________________________________________________________________________________________________
 #### Individual Player Salary vs OVA Rating
    Findings: 
@@ -164,7 +164,7 @@ ________________________________________________________________________________
 ![Average Salary of 2021 FIFA Players per Position Group](https://github.com/blumea7/SQL-Project-1-Data-Cleaning-and-Exploration-on-2021-FIFA-Dataset/blob/main/assets/3.%20Salary%20by%20Position.JPG)
 
 
-#### Top 10 Players rated by OVA and their Salaries and Positions
+#### Top 10 Players rated by OVA against their Salaries
 
    Findings: 
    
@@ -187,6 +187,7 @@ ________________________________________________________________________________
    Findings: 
    
    - Generally, all positions are paid the most either at the age of 25-30 or 30-35. 
-   - Note: The Є20,000 average salary for defenders with ages 40-45 is considered not reliable data since the sample size is only 1. 
+   - Note: The reported average salary of Є20,000 for defenders aged between 40-45 should not be relied upon as a credible statistic
+        -  Upon further data exploration, it was found out that the  sample size is only 1 rendering the result statistically insignificant.
 
 ![Average Salary per Age Group and Position Group](https://github.com/blumea7/SQL-Project-1-Data-Cleaning-and-Exploration-on-2021-FIFA-Dataset/blob/main/assets/4.%20Salary%20by%20Position%20Group%20and%20Age.JPG)
