@@ -219,10 +219,10 @@ ORDER BY Pos_Mean_Wage DESC
 
 ---------------------------------------------------------------------------------------
 
--- GOAL: DETERMINE DISTRIBUTION OF WAGE ACCROSS AGE PER POSITION
+-- GOAL: DETERMINE DISTRIBUTION OF WAGE ACCROSS AGE PER POSITION GROUP
 
 WITH AgeGroupCTE AS(
-	SELECT Best_Position, Wage_Euro, 
+	SELECT Position_Group, Wage_Euro, 
 	(CASE WHEN Age BETWEEN 15 AND 20 THEN '15 - 20'
 		 WHEN Age BETWEEN 20 AND 25 THEN '20 - 25'
 		 WHEN Age BETWEEN 25 AND 30 THEN '25 - 30'
@@ -235,9 +235,18 @@ WITH AgeGroupCTE AS(
 		  Wage_euro != 0
 )
 
-SELECT DISTINCT 
-Best_Position, 
+SELECT DISTINCT
+Position_Group, 
 Age_Group,
-ROUND(AVG(Wage_Euro) OVER(PARTITION BY Best_Position, Age_Group),0) Mean_Wage_Per_Age_Group
+ROUND(AVG(Wage_Euro) OVER(PARTITION BY Position_Group, Age_Group),0) Mean_Wage_Per_Age_Group
 FROM AgeGroupCTE
-ORDER BY Best_Position, Age_Group
+ORDER BY Position_Group, Age_Group
+
+---------------------------------------------------------------------------------------
+/* SELECT LongName, Age, OVA, Club, Wage_euro     -- Findings: The 20K average salary for Defenders with age 40-45
+FROM FIFA21..fifa21	                          --           is an outlier (not reliable) since the sample size is
+WHERE (Age BETWEEN 40 AND 45) AND                 --           only 1
+	   Position_Group = 'Defenders' AND
+	   Wage_euro != 0
+*/
+
