@@ -138,4 +138,55 @@ ________________________________________________________________________________
 
 ### Data Visualization
 __________________________________________________________________________________________________________________________________________________________
-To follow...
+#### Individual Player Salary vs OVA Rating
+   Findings: 
+   
+   
+   - There is a strong correlation between a player's OVA rating and their salary. 
+       - A higher OVA rating often translates to a higher salary 
+
+
+   - Half of the FIFA players are earning below Є4000, which is 140x lower than the highest earning player (Є560,000)
+   
+   
+   
+![Salary of 2021 FIFA Players](https://github.com/blumea7/SQL-Project-1-Data-Cleaning-and-Exploration-on-2021-FIFA-Dataset/blob/main/assets/1.%20Salary%20by%20OVA.JPG)
+
+
+#### Average Salary per Position (and Position Group)
+
+   Findings:
+   
+   - Generally, forwards are paid the highest, followed by midfielders, and then by defenders. Goalkeepers are paid the least.
+
+
+
+![Average Salary of 2021 FIFA Players per Position Group](https://github.com/blumea7/SQL-Project-1-Data-Cleaning-and-Exploration-on-2021-FIFA-Dataset/blob/main/assets/3.%20Salary%20by%20Position.JPG)
+
+
+#### Top 10 Players rated by OVA and their Salaries and Positions
+
+   Findings: 
+   
+   - We have established in the previous charts that forwards are the highest earning players (and therefore their OVA is also high) 
+        - Hence, our Top 10 players by OVA are dominated by forwards (with frequency = 5) 
+   - The second chart reveals that goalkeepers are paid the least
+        - Surprisingly, we have 3 goalkeepers with high OVA ratings and salaries 
+        - This suggests that there may be an abundance of goalkeepers in the league, and only the top performers are highly paid.
+   - The first chart depicts that OVA ratings is heavily correlated to earnings
+        - However, for high earning players, OVA might have minimal impact on their earning potential
+        - Notice that the graph of OVA is generally flat for the top 10 players 
+        - But the Top 1 player earns 4.48 times more than the Top 10 player despite having nearly the same OVA rating
+
+
+
+![Top 10 Players by OVA and their Salaries and Positions](https://github.com/blumea7/SQL-Project-1-Data-Cleaning-and-Exploration-on-2021-FIFA-Dataset/blob/main/assets/2.1%20Top%2010%20Players%20Salary.JPG)
+
+#### Average Salary per Age and Position Group 
+
+   Findings: 
+   
+   - Generally, all positions are paid the most either at the age of 25-30 or 30-35. 
+   - Note: The Є20,000 average salary for defenders with ages 40-45 is considered not reliable data since the sample size is only 1. 
+
+![Average Salary per Age Group and Position Group](https://github.com/blumea7/SQL-Project-1-Data-Cleaning-and-Exploration-on-2021-FIFA-Dataset/blob/main/assets/4.%20Salary%20by%20Position%20Group%20and%20Age.JPG)
