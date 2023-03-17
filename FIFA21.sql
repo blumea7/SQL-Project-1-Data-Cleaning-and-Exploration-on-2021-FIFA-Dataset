@@ -31,7 +31,7 @@ SELECT LongName, Nationality, Age, Club, Value, Wage, Height, Weight, countSimil
 FROM FIFA21..fifa21
 WHERE countSimilarPlayer > 1
 
--- Findings: Duplicate entries where found for Players who shifted Clubs 
+-- Findings: Duplicate entries were found for Players who shifted Clubs 
 
 ---------------------------------------------------------------------------------------
 -- GOAL: DROP UNNECCESSARY COLUMNS
@@ -87,7 +87,7 @@ ADD Value_Num float,
 
 
 UPDATE FIFA21..fifa21
-SET Value_No_Curr = REPLACE(Value, '€', '');
+SET Value_No_Curr = REPLACE(Value, 'â‚¬', '');
 
 
 UPDATE FIFA21..fifa21
@@ -105,7 +105,7 @@ ADD Wage_Num float,
 	Wage_No_Curr VarChar(10)
 
 UPDATE FIFA21..fifa21
-SET Wage_No_Curr = REPLACE(Wage, '€', '')
+SET Wage_No_Curr = REPLACE(Wage, 'â‚¬', '')
 
 UPDATE FIFA21..fifa21
 SET	Wage_Num = CASE WHEN RIGHT(WAGE, 1) = 'K' THEN CAST(REPLACE(Wage_No_Curr, 'K', '') AS float) * 1000
