@@ -38,9 +38,11 @@ The following steps were performed to clean the data:
     2. Drop unnecessary columns (photoUrl, playerUrl, Contract, Loan_Date_End,  Release_Clause were dropped as they
        will not be beneficial for our data cleaning and data exploration agenda).
         
-    3. Express all heights in cm.
+    3. Express all heights in cm and convert data type to tinyint (Originally, Some heights are expressed in 
+       ft-in and the column datatype is nvarchar).
     
-    4. Express all weights in kg.
+    4. Express all weights in kg and convert data type to tinyint (Originally, Some weights are expressed in 
+       lbs and the column datatype is nvarchar).
     
     5. Convert values in Wage and Value columns from varchar to float
     
@@ -105,90 +107,34 @@ ________________________________________________________________________________
       | GK            | Goalkeeper     | 9228          | 1434         |
       | RM            | Midfielders    | 8976          | 1259         |
 
-5. Determine the distribution of wage across different age groups in each position
+5. Determine the distribution of wage across different age groups in each position group
 
-
-      | Best_Position | Age_Group | Mean_Wage_Per_Age_Group |
-      |---------------|-----------|-------------------------|
-      | CAM           | 15 - 20   | 5493                    |
-      | CAM           | 20 - 25   | 11517                   |
-      | CAM           | 25 - 30   | 18650                   |
-      | CAM           | 30 - 35   | 15746                   |
-      | CAM           | 35 - 40   | 10130                   |
-      | CAM           | 40 - 45   | 1000                    |
-      | CB            | 15 - 20   | 4427                    |
-      | CB            | 20 - 25   | 9003                    |
-      | CB            | 25 - 30   | 12872                   |
-      | CB            | 30 - 35   | 12804                   |
-      | CB            | 35 - 40   | 9763                    |
-      | CB            | 40 - 45   | 20000                   |
-      | CDM           | 15 - 20   | 3868                    |
-      | CDM           | 20 - 25   | 9625                    |
-      | CDM           | 25 - 30   | 14796                   |
-      | CDM           | 30 - 35   | 14687                   |
-      | CDM           | 35 - 40   | 8125                    |
-      | CDM           | 40 - 45   | 3000                    |
-      | CF            | 15 - 20   | 27000                   |
-      | CF            | 20 - 25   | 10333                   |
-      | CF            | 25 - 30   | 28500                   |
-      | CF            | 30 - 35   | 38722                   |
-      | CF            | 35 - 40   | 12000                   |
-      | CM            | 15 - 20   | 5505                    |
-      | CM            | 20 - 25   | 15729                   |
-      | CM            | 25 - 30   | 19152                   |
-      | CM            | 30 - 35   | 17623                   |
-      | CM            | 35 - 40   | 4769                    |
-      | GK            | 15 - 20   | 2946                    |
-      | GK            | 20 - 25   | 5802                    |
-      | GK            | 25 - 30   | 11886                   |
-      | GK            | 30 - 35   | 12672                   |
-      | GK            | 35 - 40   | 6280                    |
-      | GK            | 40 - 45   | 12250                   |
-      | LB            | 15 - 20   | 5117                    |
-      | LB            | 20 - 25   | 8391                    |
-      | LB            | 25 - 30   | 13493                   |
-      | LB            | 30 - 35   | 13022                   |
-      | LB            | 35 - 40   | 5667                    |
-      | LM            | 15 - 20   | 6841                    |
-      | LM            | 20 - 25   | 9958                    |
-      | LM            | 25 - 30   | 12916                   |
-      | LM            | 30 - 35   | 11860                   |
-      | LM            | 35 - 40   | 1500                    |
-      | LW            | 15 - 20   | 8417                    |
-      | LW            | 20 - 25   | 14697                   |
-      | LW            | 25 - 30   | 25667                   |
-      | LW            | 30 - 35   | 18806                   |
-      | LW            | 35 - 40   | 8500                    |
-      | LWB           | 15 - 20   | 4808                    |
-      | LWB           | 20 - 25   | 10440                   |
-      | LWB           | 25 - 30   | 13518                   |
-      | LWB           | 30 - 35   | 6615                    |
-      | RB            | 15 - 20   | 4261                    |
-      | RB            | 20 - 25   | 8631                    |
-      | RB            | 25 - 30   | 14631                   |
-      | RB            | 30 - 35   | 13115                   |
-      | RB            | 35 - 40   | 7889                    |
-      | RM            | 15 - 20   | 5515                    |
-      | RM            | 20 - 25   | 7430                    |
-      | RM            | 25 - 30   | 12944                   |
-      | RM            | 30 - 35   | 12182                   |
-      | RM            | 35 - 40   | 4833                    |
-      | RW            | 15 - 20   | 5739                    |
-      | RW            | 20 - 25   | 16556                   |
-      | RW            | 25 - 30   | 17435                   |
-      | RW            | 30 - 35   | 28707                   |
-      | RW            | 35 - 40   | 24000                   |
-      | RWB           | 15 - 20   | 5909                    |
-      | RWB           | 20 - 25   | 7186                    |
-      | RWB           | 25 - 30   | 16985                   |
-      | RWB           | 30 - 35   | 10417                   |
-      | ST            | 15 - 20   | 4101                    |
-      | ST            | 20 - 25   | 9641                    |
-      | ST            | 25 - 30   | 14580                   |
-      | ST            | 30 - 35   | 17816                   |
-      | ST            | 35 - 40   | 10571                   |
-      | ST            | 40 - 45   | 3500                    |
-
+    | Position_Group | Age_Group | Mean_Wage_Per_Age_Group |
+    |----------------|-----------|-------------------------|
+    | Defenders      | 15 - 20   | 4597                    |
+    | Defenders      | 20 - 25   | 8825                    |
+    | Defenders      | 25 - 30   | 13493                   |
+    | Defenders      | 30 - 35   | 12751                   |
+    | Defenders      | 35 - 40   | 8981                    |
+    | Defenders      | 40 - 45   | 20000                   |
+    | Forwards       | 15 - 20   | 4505                    |
+    | Forwards       | 20 - 25   | 10109                   |
+    | Forwards       | 25 - 30   | 16312                   |
+    | Forwards       | 30 - 35   | 20142                   |
+    | Forwards       | 35 - 40   | 10902                   |
+    | Forwards       | 40 - 45   | 3500                    |
+    | Goalkeeper     | 15 - 20   | 2946                    |
+    | Goalkeeper     | 20 - 25   | 5802                    |
+    | Goalkeeper     | 25 - 30   | 11886                   |
+    | Goalkeeper     | 30 - 35   | 12672                   |
+    | Goalkeeper     | 35 - 40   | 6280                    |
+    | Goalkeeper     | 40 - 45   | 12250                   |
+    | Midfielders    | 15 - 20   | 5416                    |
+    | Midfielders    | 20 - 25   | 10601                   |
+    | Midfielders    | 25 - 30   | 15779                   |
+    | Midfielders    | 30 - 35   | 14668                   |
+    | Midfielders    | 35 - 40   | 7617                    |
+    | Midfielders    | 40 - 45   | 2333                    |
 
 ### Data Visualization
 __________________________________________________________________________________________________________________________________________________________
