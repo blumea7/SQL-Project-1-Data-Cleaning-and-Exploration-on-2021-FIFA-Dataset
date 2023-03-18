@@ -81,7 +81,11 @@ ________________________________________________________________________________
 2. Find the median wage of players (Findings: Median = 4000 Euro)
 3. Find the average wage of players (Findings: Average = 11332 Euro)
 
-4. Determine which positions are paid the most
+4. Determine which positions are paid the most. Also, create a new column that would assign the correct position group to each position.
+    - Forwards: LW, ST, CF, ST, RW
+    - Midfielders: LM, CM, CDM, CAM, CM, RM
+    - Defenders: LB, LWB, CB, SW, RB, RWB
+    - Goalkeeper: GK
 
    Findings: 
    
@@ -138,6 +142,10 @@ ________________________________________________________________________________
 
 ### Data Analysis and Visualization
 __________________________________________________________________________________________________________________________________________________________
+### Notes:
+- Data Visualizations are done in Power BI.
+- Data visualizations are just derived from the queried tables in Data Exploration Section and not from the whole dataset.
+
 #### Individual Player Salary vs OVA Rating
    Findings: 
    
