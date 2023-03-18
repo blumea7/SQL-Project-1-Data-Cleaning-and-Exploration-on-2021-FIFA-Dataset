@@ -1,3 +1,7 @@
+-- NOTE: THIS SQL FILE IS SECTIONED INTO 2 PARTS:
+--       1) DATA CLEANING
+--       2) DATA EXPLORATION
+
 -- USEFUL QUERIES FOR FAMILIARIZING THE TABLE THAT I CAN REUSE FROM TIME TO TIME
 
 SELECT * FROM FIFA21..fifa21
@@ -10,6 +14,7 @@ FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_NAME = 'fifa21'
 
 ---------------------------------------------------------------------------------------
+-- PART 1: DATA CLEANING
 -- GOAL: CHECK DUPLICATES
 
 ALTER TABLE FIFA21..fifa21
@@ -146,7 +151,7 @@ EXEC sp_rename 'dbo.fifa21.Value_num', 'Value_euro', 'COLUMN'
 
 
 ---------------------------------------------------------------------------------------
--- DATA EXPLORATION
+-- PART2: DATA EXPLORATION
 
 -- GOAL: RANK THE CLUBS BASED ON THE TOTAL STATS OF THEIR PLAYERS
 
