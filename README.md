@@ -28,6 +28,7 @@ ________________________________________________________________________________
 
 ### Data Cleaning
 __________________________________________________________________________________________________________________________________________________________
+See data cleaning SQL script [here](https://github.com/blumea7/SQL-Project-1-Data-Cleaning-and-Exploration-on-2021-FIFA-Dataset/blob/main/sql-scripts/FIFA21_Data_Cleaning.sql). 
 
 The following steps were performed to clean the data:
 
@@ -61,6 +62,7 @@ Here's a snippet of the cleaned data:
 
 ### Data Exploration
 __________________________________________________________________________________________________________________________________________________________
+See data exploration SQL script [here](https://github.com/blumea7/SQL-Project-1-Data-Cleaning-and-Exploration-on-2021-FIFA-Dataset/blob/main/sql-scripts/FIFA21_Data_Exploration.sql)
 
 1. Find the Top 10 players based on OVA
  
